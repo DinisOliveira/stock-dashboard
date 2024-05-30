@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ symbol }} Stock Prices</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Stock Dashboard</h1>
+    </header>
+    <main class="container">
+        <section>
+            <h2>{{ symbol }} Stock Prices</h2>
+            <div>
+                {{ stock_plot|safe }}
+            </div>
+            <div class="stock-info">
+                <h3>{{ stock_info.name }}</h3>
+                <p><strong>Sector:</strong> {{ stock_info.sector }}</p>
+                <p><strong>Industry:</strong> {{ stock_info.industry }}</p>
+                <p><strong>Market Cap:</strong> {{ stock_info.market_cap }}</p>
+                <p>{{ stock_info.summary }}</p>
+            </div>
+            <a href="/" class="btn">Back to Dashboard</a>
+        </section>
+    </main>
+</body>
+</html>

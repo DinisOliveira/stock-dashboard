@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Stock Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Stocks Dashboard</h1>
+    </header>
+    <main class="container">
+        <section class="stocks-section">
+            <h2>Top 10 Stocks</h2>
+            <div class="button-list">
+                {% for stock in stocks %}
+                    <a href="/stock/{{ stock }}" class="btn">{{ stock }}</a>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="comparison-section">
+            <h2>Comparison of Top 10 Stocks:</h2>
+            <div>
+                {{ comparison_plot|safe }}
+            </div>
+        </section>
+    </main>
+</body>
+</html>
